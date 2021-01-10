@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-go-polls
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE : go_polls
+      MYSQL_USER: advenoh
+      MYSQL_PASSWORD: advenoh
+      TZ: Asia/Seoul
+    volumes:
+    - ${HOME}/data/docker/mysql_go_polls:/var/lib/mysql
+    ports:
+    - 3306:3306
